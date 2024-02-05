@@ -84,11 +84,11 @@ const SongForm = () => {
   return (
     <FormContainer>
       <FormStyled>
-        <Input name="id" value={song?.id} type="text"  disabled/>
-        <Input name="title" value={song?.title || ""} type="text"  onChange={(event)=>handleChange(event)} />
-        <Input name="artist" value={song?.artist || ""} type="text"  onChange={(event)=>handleChange(event)} />
-        <Input name="album" value={song?.album || ""} type="text"  onChange={(event)=>handleChange(event)} />
-        <Input name="genre" value={song?.genre || ""} type="text" onChange={(event)=>handleChange(event)} />
+        {/* <Input name="id" value={song?.id} type="text"  disabled/> */}
+        <Input name="title" value={song?.title || ""} type="text" placeholder='Title' onChange={(event)=>handleChange(event)} />
+        <Input name="artist" value={song?.artist || ""} type="text" placeholder='Artist' onChange={(event)=>handleChange(event)} />
+        <Input name="album" value={song?.album || ""} type="text" placeholder='Album' onChange={(event)=>handleChange(event)} />
+        <Input name="genre" value={song?.genre || ""} type="text" placeholder='Genre' onChange={(event)=>handleChange(event)} />
         <Button onClick={handleSubmit} >Submit</Button>
       </FormStyled>
     </FormContainer>

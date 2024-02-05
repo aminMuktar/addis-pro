@@ -12,6 +12,7 @@ const SongsSlice= createSlice({
       state = action.payload
       return state
     },
+    
     addSongSlice: (state: SongsState,action: PayloadAction<SongState>): SongsState=>{
       state.push(action.payload)
       return state

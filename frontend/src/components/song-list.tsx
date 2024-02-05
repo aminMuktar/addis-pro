@@ -16,11 +16,11 @@ const CardContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-const CardImage = styled.img`
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8px 8px 0 0;
-`;
+// const CardImage = styled.img`
+//   width: 100%;
+//   object-fit: cover;
+//   border-radius: 8px 8px 0 0;
+// `;
 const GridContainer = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

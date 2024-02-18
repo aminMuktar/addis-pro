@@ -1,16 +1,11 @@
-FROM node:14-alpine as build
-
-WORKDIR /usr/local/share/frontend
-
+FROM node:8 as build-stage
+WORKDIR /app
 COPY package*.json ./
-RUN apk --update add libtool automake autoconf nasm gcc make g++ zlib-dev
 RUN npm install
 COPY . .
 RUN npm run build
 
-FROM danjellz/http-server:1.2
-
-ENV PORT=3000
-EXPOSE 3000
-
-COPY --from=build /usr/local/share/frontend/public .
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx","-g", "daemon off;"]
